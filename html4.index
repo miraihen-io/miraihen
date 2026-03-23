@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Tina</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Background langsung dari internet */
+    .bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+      filter: brightness(0.3) blur(3px);
+      z-index: -1;
+    }
+
+    .card {
+      text-align: center;
+      background: rgba(0,0,0,0.4);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 420px;
+    }
+
+    .line {
+      opacity: 0;
+      transition: 2s;
+      margin-top: 12px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .show {
+      opacity: 1;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background: #ff4d6d;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+  <h1>Hai Tina</h1>
+  <p>aku cuma mau bilang sesuatu... pelan aja</p>
+
+  <button onclick="start()">dengerin ya</button>
+
+  <div id="text">
+    <p class="line">aku tau... kadang hari terasa berat</p>
+    <p class="line">kayak semuanya dateng barengan, tanpa jeda</p>
+    <p class="line">dan kamu harus kuat... walau sebenernya capek</p>
+
+    <p class="line">...</p>
+
+    <p class="line">tapi anehnya</p>
+    <p class="line">di tengah semua itu</p>
+    <p class="line">kamu masih bertahan</p>
+
+    <p class="line">pelan...</p>
+    <p class="line">tapi kamu ga berhenti</p>
+
+    <p class="line">...</p>
+
+    <p class="line">dan mungkin kamu ga sadar</p>
+    <p class="line">sekuat itu kamu</p>
+    <p class="line">seberarti itu kamu</p>
+
+    <p class="line">...</p>
+
+    <p class="line">jadi kalau suatu hari kamu ngerasa sendiri</p>
+    <p class="line">atau ngerasa ga cukup</p>
+
+    <p class="line">coba inget satu hal kecil ini...</p>
+
+    <p class="line">kamu udah sejauh ini</p>
+    <p class="line">dan itu... ga semua orang bisa</p>
+
+    <p class="line">...</p>
+
+    <p class="line">jadi tetap jadi kamu ya</p>
+    <p class="line">versi yang mungkin kamu anggap biasa</p>
+    <p class="line">tapi bagi orang lain...</p>
+    <p class="line">itu lebih dari cukup 🌙</p>
+  </div>
+</div>
+
+<!-- Musik (ganti kalau mau) -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6d1b5a6b6e.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function start() {
+  const lines = document.querySelectorAll(".line");
+  const music = document.getElementById("music");
+
+  music.volume = 0.3;
+  music.play();
+
+  lines.forEach((line, i) => {
+    setTimeout(() => {
+      line.classList.add("show");
+    }, i * 2500);
+  });
+}
+</script>
+
+</body>
+</html>
